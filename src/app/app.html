@@ -1,0 +1,17 @@
+<form #form1="ngForm" (ngSubmit)="calc(form1)">
+    <input ngModel type="number" name="num1"><br>
+    <input ngModel type="number" name="num2"><br>
+
+    <input type="hidden" name="char" [(ngModel)]="char">
+
+    <button type="submit" (click)="char='+'">+</button>
+    <button type="submit" (click)="char='-'">-</button>
+    <button type="submit" (click)="char='*'">*</button>
+    <button type="submit" (click)="char='/'">/</button>
+</form>
+
+@if (result !== null) {
+  <p>Wynik: {{ result }}</p>
+} @else {
+  <p>Nie można wykonać działania.</p>
+}
