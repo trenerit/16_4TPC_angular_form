@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, JsonPipe } from '@angular/common';
 import { Component, signal } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
@@ -11,20 +11,18 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.scss'
 })
 export class App {
-  char = '+';
-  result: number | null = null;
-  private readonly ops: Record<string, (a: number, b: number) => number | null> = {
-    '+': (a, b) => a + b,
-    '-': (a, b) => a - b,
-    '*': (a, b) => a * b,
-    '/': (a, b) => (b === 0 ? null : a / b),
-  };
+  
+  data: string[] = ["Piotr", "Anna", "Adam"];
 
-  calc(data: NgForm): void {
-    const char = data.value.char;
-    const num1 = Number(data.value.num1);
-    const num2 = Number(data.value.num2);
+  setNewName(data: NgForm) {
+    console.log(data.value.firstname);
+    const imie: string = data.value.firstname;
 
-    this.result = this.ops[char]?.(num1, num2) ?? null;
+    this.data.push(imie);
+
+    console.log(this.data);
   }
+
+
+
 }

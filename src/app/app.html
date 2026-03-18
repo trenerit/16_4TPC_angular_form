@@ -1,17 +1,8 @@
-<form #form1="ngForm" (ngSubmit)="calc(form1)">
-    <input ngModel type="number" name="num1"><br>
-    <input ngModel type="number" name="num2"><br>
-
-    <input type="hidden" name="char" [(ngModel)]="char">
-
-    <button type="submit" (click)="char='+'">+</button>
-    <button type="submit" (click)="char='-'">-</button>
-    <button type="submit" (click)="char='*'">*</button>
-    <button type="submit" (click)="char='/'">/</button>
+<form #formName="ngForm" (ngSubmit)="setNewName(formName)">
+  <input type="text" ngModel name="firstname"><br>
+  <button type="submit">Zapisz</button>
 </form>
 
-@if (result !== null) {
-  <p>Wynik: {{ result }}</p>
-} @else {
-  <p>Nie można wykonać działania.</p>
-}
+@for(elem of data; track $index) {
+  <p>{{elem}}</p>
+} 
