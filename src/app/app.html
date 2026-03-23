@@ -1,5 +1,5 @@
 <form #formName="ngForm" (ngSubmit)="setNewName(formName)">
-  <input type="text" ngModel name="firstname"><br>
+  <input type="text" [(ngModel)]="contactName!.firstName" name="firstname"><br>
   <button type="submit">Zapisz</button>
 </form>
 
