@@ -4,5 +4,5 @@
 </form>
 
 @for(elem of data; track $index) {
-  <p>{{elem}}</p>
+  <p>{{elem}} <button (click)="delElem($index)">usuń</button> <button (click)="modElem($index)">modyfikuj</button></p>
 } 

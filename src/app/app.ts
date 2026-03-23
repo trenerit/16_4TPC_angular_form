@@ -23,6 +23,13 @@ export class App {
     console.log(this.data);
   }
 
+  delElem(i: number): void {
+    this.data.splice(i, 1);
+  }
+
+  modElem(i: number): void {
+    
+  }
 
 
 }
