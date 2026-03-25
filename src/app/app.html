@@ -1,8 +1,16 @@
-<form #formName="ngForm" (ngSubmit)="setNewName(formName)">
+<router-outlet></router-outlet>
+<!-- <form #formName="ngForm" (ngSubmit)="setNewName(formName)">
   <input type="text" [(ngModel)]="contactName!.firstName" name="firstname"><br>
   <button type="submit">Zapisz</button>
 </form>
 
+<nav>
+  <a routerLink="/add-name">Add name</a>
+  <a routerLink="/mod-name">Mod name</a>
+</nav>
+
 @for(elem of data; track $index) {
   <p>{{elem}} <button (click)="delElem($index)">usuń</button> <button (click)="modElem($index)">modyfikuj</button></p>
 } 
+
+<router-outlet></router-outlet> -->
